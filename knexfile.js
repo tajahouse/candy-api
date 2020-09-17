@@ -5,8 +5,13 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './candy.db3'
+      filename: './database/candy.db3'
     },
+    migrations: {
+      directory: './database/migrations',
+      tableName: 'dbmigrations'
+    },
+    seeds: { directory: './database/seeds'},
     useNullAsDefault: true,
     pool: {
       afterCreate: (conn, done) => {
