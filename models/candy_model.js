@@ -52,12 +52,27 @@ const getByManufacturer =(id) =>{
 const getManufacturer = () =>{
     return data('manufacturers').select('manufacturers.id', 'manufacturers.manufacturer_name', 'manufacturers.desc')
 }
+const findManufacturer = (name) =>{
+    return data('manufacturers').where('manufacturer.manufacturer_name', name)
+}
+const addManufacturer = (manufacturer) =>{
+    return data('manufacturers').insert('manufacturer')
+}
+const editManufacturer =(manufacturer, id) =>{
+    return data('manufacturers').update(manufacturer).where('manufacturer.id', id).select('manufacturers')
+}
+const removeManufacturer =(id) =>{
+    return data('manufacturers').delete('manufacturers').where('manufacturers.id', id)
+}
+
 
 const addCandy = (post) =>{
     return data('candy').insert(post).returning('candy.id')
 }
-
 const addToManufacturer = (manufacturer) =>{
-    
+    return data('manufacturers_candy').insert(manufacturer).returning('manufacturers_candy.manufacturerID')
 }
+
+
+
 
