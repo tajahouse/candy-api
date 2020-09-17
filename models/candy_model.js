@@ -29,8 +29,8 @@ const getCandyById = (id) => {
     .join("manufacturers_candy", "manufacturers_candy.candyID", "candy.id")
     .join("candy", "candy.id", "manufacturers_candy.manufacturerID")
     .select(
-      "users.username as user",
-      "users.id as userID",
+       "users.id as userID",
+       "users.username as user",
       "candy.id as candyID",
       "candy.candy_name as candy",
       "candy.candy_vegan as candyVegan",
