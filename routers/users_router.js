@@ -30,4 +30,18 @@ router.get("/users/:id", async (req, res, next) => {
   }
 });
 
+//a Let's get some new users!
+router.post("/register", async (req,res, next) =>{
+    try{
+        const { username, password } = req.body;
+        const user = await Users.findBy({ username }).first()
+        if (user){
+            return status(409).json({
+                message: "User already exists"
+            })
+        } 
+    }catch (err) {
+            next(err);
+        }
+})
 module.exports = router;
