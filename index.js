@@ -22,7 +22,7 @@ server.use(
 );
 
 server.use("/api/auth", Users);
-// server.use("/api/candy", Candy);
+server.use("/api/candy", Candy);
 
 server.use("/", (req, res) =>{
     res.json({
