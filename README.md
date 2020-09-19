@@ -1,11 +1,11 @@
 # candy-api
 
-baseURL: http://localhost:3333/api/ \n
+baseURL: http://localhost:3333/api/ 
 
-Login: auth/login \n
+Login: auth/login
 
-Register: auth/register \n
+Register: auth/register
 
-get candy: candy/candy \n
+get candy: candy/candy
 
-get manufacturers: candy/manufacturer \n
+get manufacturers: candy/manufacturer
