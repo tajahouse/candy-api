@@ -40,5 +40,3 @@ if(!module.parent){
         console.log(`\n === Server listening on port ${PORT} because I told it to ===\n http://localhost:3333/ `)
     })
 }
-
-module.exports = server;
