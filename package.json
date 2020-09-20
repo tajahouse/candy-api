@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm install pm2 -g",
-    "start": "pm2-runtime index.js -i max",
-    "server": "nodemon index.js"
+    "start": "node index.js",
+    "server": "cross-env NODE_ENV=development nodemon -r dotenv/config index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "heroku-run-build-script": true,
   "repository": {

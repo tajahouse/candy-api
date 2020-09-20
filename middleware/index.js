@@ -42,7 +42,7 @@ function restrict() {
 				// return stats(401, 'Invalid Credentials 1')
 				return res.status(401).json(authErr)
 			}
-			jwt.verify(token, process.env.JWT_SECRET || 'You guys rock!', (err, decoded) => {
+			jwt.verify(token, process.env.JWT_SECRET || "You guys rock!", (err, decoded) => {
 				if (err) {
 					// return stats(401, 'Invalid Credentials 2')
 					return res.status(401).json(authErr)
