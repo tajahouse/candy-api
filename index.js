@@ -16,8 +16,6 @@ server.use(express.json());
 server.use(
     session({
         secret: process.env.SECRET || "You guys rock!",
-        resave: false,
-        saveUninitialized:false,
     })
 );
 
