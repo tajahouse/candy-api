@@ -8,6 +8,7 @@
     "start": "pm2-runtime index.js -i max",
     "server": "nodemon index.js"
   },
+  "heroku-run-build-script": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tajahouse/candy-api.git"
