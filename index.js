@@ -7,7 +7,7 @@ const Users = require('./routers/users_router');
 const Candy = require('./routers/candy_router');
 
 const server = express();
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 5000;
 
 server.use(helmet());
 server.use(cors());
@@ -16,6 +16,8 @@ server.use(express.json());
 server.use(
     session({
         secret: process.env.SECRET || "You guys rock!",
+        resave: false,
+        saveUninitialized:false,
     })
 );
 
@@ -37,6 +39,8 @@ server.use((err, req, res, next) =>{
 
 if(!module.parent){
     server.listen(PORT, () =>{
-        console.log(`\n === Server listening on port ${PORT} because I told it to ===\n http://localhost:3333/ `)
+        console.log(`\n === Server listening on port ${PORT} because I told it to ===\n http://localhost:${PORT}/ `)
     })
 }
+
+module.exports = server;
