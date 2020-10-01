@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npm install pm2 -g",
-    "start": "pm2-runtime index.js -i max",
+    "start": "node index.js",
     "server": "nodemon index.js"
   },
   "heroku-run-build-script": true,
