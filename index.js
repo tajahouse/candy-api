@@ -13,6 +13,7 @@ server.use(helmet());
 server.use(cors());
 server.use(cookieParser());
 server.use(express.json());
+
 server.use(
     session({
         secret: process.env.SECRET || "You guys rock!",
@@ -24,7 +25,8 @@ server.use(
 server.use("/api/auth", Users);
 server.use("/api/candy", Candy);
 
-server.use("/", (req, res) =>{
+
+server.get("/", (req, res) =>{
     res.json({
         message: "This is the time when I tell you what I want to tell you. You will be a success!!! I don't know what I'm typing, just wanted to type something long so here it is.. Hope you enjoyed!!! Boop! 😇 "
     })
